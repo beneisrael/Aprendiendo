@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Etapa 1 - Círculo en el centro</title>
+  <style>
+    /* ===== CSS ===== */
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #74ABE2, #5563DE);
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .circle {
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle at 30% 30%, #fff, #007BFF);
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      transition: all 0.5s ease;
+    }
+
+    h1 {
+      position: absolute;
+      top: 20px;
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== HTML ===== -->
+  <h1>Etapa 1: Círculo centrado</h1>
+  <div class="circle" id="circle"></div>
+
+  <script>
+    // ===== JavaScript =====
+    console.log("✅ Etapa 1 cargada: Círculo en el centro de la pantalla.");
+
+    // Solo para probar conexión JS:
+    const circle = document.getElementById('circle');
+    circle.addEventListener('click', () => {
+      circle.style.background = 'radial-gradient(circle at 30% 30%, #fff, #28a745)';
+      circle.style.transform = 'scale(1.1)';
+      setTimeout(() => circle.style.transform = 'scale(1)', 200);
+      console.log("🟢 Círculo clickeado.");
+    });
+  </script>
+</body>
+</html>
